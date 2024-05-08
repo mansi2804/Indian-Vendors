@@ -1,0 +1,30 @@
+<app-admin-dashboard></app-admin-dashboard><br />
+<table class="table container">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">comment</th>
+      <th scope="col">date</th>
+      <th scope="col">product id</th>
+      <th scope="col">user id</th>
+      <th scope="col">publish / delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let badword of slangComments">
+      <th scope="row">{{ badword.id }}</th>
+      <td>{{ badword.comment }}</td>
+      <td>{{ badword.date }}</td>
+      <td>{{ badword.productid }}</td>
+      <td>{{ badword.userid }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="uploadComment(badword)">
+          <mat-icon>cloud_upload</mat-icon></button
+        >&nbsp;
+        <button class="btn btn-danger" (click)="deleteComment(badword)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

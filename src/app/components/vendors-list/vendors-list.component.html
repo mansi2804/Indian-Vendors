@@ -1,0 +1,27 @@
+<app-admin-dashboard></app-admin-dashboard><br />
+<table class="table container">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">email id</th>
+      <th scope="col">password</th>
+      <th scope="col">is vendor</th>
+      <th scope="col">Contact no</th>
+      <th scope="col">remove vendor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vendor of vendors">
+      <th scope="row">{{ vendor.id }}</th>
+      <td>{{ vendor.userid }}</td>
+      <td>{{ vendor.password }}</td>
+      <td>{{ vendor.isvendor }}</td>
+      <td>+91 {{ vendor.contactno }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="removeVendor(vendor)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

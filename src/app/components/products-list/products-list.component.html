@@ -1,0 +1,30 @@
+<app-vendorsdashboard></app-vendorsdashboard>
+<br />
+<table class="table container">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">image</th>
+      <th scope="col">product name</th>
+      <th scope="col">real price</th>
+      <th scope="col">offer price</th>
+      <th scope="col">remove product</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let prod of products">
+    <tr *ngIf="user == prod.vendorid">
+      <th scope="row">{{ prod.id }}</th>
+      <td>
+        <img src="{{ prod.productimage }}" style="width: 40px; height: 40px" />
+      </td>
+      <td>{{ prod.productname }}</td>
+      <td>{{ prod.realprice }} rs</td>
+      <th scope="row">{{ prod.offerprice }} rs</th>
+      <td>
+        <button (click)="deleteProduct(prod)" class="btn btn-danger">
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

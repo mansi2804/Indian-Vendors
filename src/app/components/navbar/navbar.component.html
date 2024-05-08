@@ -1,0 +1,114 @@
+<ng-sidebar-container>
+  <ng-sidebar [opened]="opened">
+    <button class="cancel shadow-none" (click)="toggleSidebar()">
+      <mat-icon>cancel</mat-icon></button
+    ><br /><br />
+    <span *ngIf="user">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn btn-primary" style="border-radius: 50%">
+            <mat-icon>person</mat-icon>
+          </button>
+          <span
+            style="
+              border-top: 1px solid black;
+              border-right: 1px solid black;
+              border-bottom: 1px solid black;
+              padding: 10px;
+            "
+            >Hello, {{ displayNameOnNav }}</span
+          >
+        </li>
+      </ul>
+      <br />
+    </span>
+    <ul class="navbar-nav">
+      <span *ngIf="user">
+        <li class="nav-item">
+          <a routerLink="/" (click)="toggleSidebar()" class="nav-link">Home</a>
+          <hr />
+        </li>
+      </span>
+      <span *ngIf="user">
+        <li class="nav-item nav-item2">
+          <a
+            routerLink="/order-history"
+            (click)="toggleSidebar()"
+            class="nav-link"
+            >Order history</a
+          >
+          <hr />
+        </li>
+      </span>
+
+      <span *ngIf="userisvendor">
+        <li class="nav-item">
+          <a
+            routerLink="vendordashboard/add-products"
+            (click)="toggleSidebar()"
+            class="nav-link"
+            >Add Products</a
+          >
+          <hr />
+        </li>
+      </span>
+      <li *ngIf="userisadmin" class="nav-item2">
+        <a
+          routerLink="/dashboard/add-vendors"
+          (click)="toggleSidebar()"
+          class="nav-link"
+          >Dashboard</a
+        >
+        <hr />
+      </li>
+      <li *ngIf="!user" class="nav-item2">
+        <a
+          routerLink="/accounts/register"
+          (click)="toggleSidebar()"
+          class="nav-link"
+          >Register/Login</a
+        >
+        <hr />
+      </li>
+     
+      <li *ngIf="user">
+        <button
+          mat-raised-button
+          color="warn"
+          class="btn btn-sm logout"
+          style="width: 150px"
+          (click)="logoutUser(); toggleSidebar()"
+        >
+          <mat-icon>power_settings_new</mat-icon>
+
+          Logout
+        </button>
+      </li>
+    </ul>
+  </ng-sidebar>
+  <div ng-sidebar-content>
+    <mat-toolbar color="primary">
+      <button
+        mat-icon-button
+        class="example-icon"
+        (click)="toggleSidebar()"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span style="margin-left: 10px">IndianVendors</span>
+      <span class="example-spacer"></span>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+        routerLink="/cart"
+      >
+        <mat-icon *ngIf="user">shopping_cart</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </div>
+</ng-sidebar-container>
+<div></div>
+<app-footer></app-footer>

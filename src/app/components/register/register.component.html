@@ -1,0 +1,50 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <h3>Register here...</h3>
+    </div>
+
+    <!-- Login Form -->
+    <form #form="ngForm" (ngSubmit)="registerHandler(form)">
+      <input
+        type="email"
+        class="fadeIn second"
+        name="userid"
+        #userid="ngModel"
+        [(ngModel)]="dataService.register.userid"
+        placeholder="email id"
+      />
+      <input
+        type="{{ isActive ? 'text' : 'password' }}"
+        class="fadeIn third"
+        id="pass"
+        name="password"
+        #password="ngModel"
+        [(ngModel)]="dataService.register.password"
+        placeholder="password"
+      />
+      <input
+        type="{{ isActive ? 'text' : 'password' }}"
+        class="fadeIn third"
+        id="cpass"
+        name="cpassword"
+        #cpassword="ngModel"
+        [(ngModel)]="dataService.register.cpassword"
+        placeholder="confirm password"
+      /><br />
+      <input type="checkbox" (click)="active()" />
+      <p id="showpass">Show Password</p>
+      <input type="submit" class="fadeIn fourth" value="Register" />
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" routerLink="/accounts/login"
+        >Already regisered ? Login here</a
+      >
+    </div>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img
+        class="rounded img-fluid img-thumbnail"
+        src="{{ product.productimage }}"
+        alt=""
+        style="max-width: 350px; max-height: 400px; border: 2px solid black"
+      />
+      <div>
+        <br />
+        <div style="font-size: 30px; font-weight: bolder">
+          {{ product.productname }} | {{ product.brand }}
+        </div>
+      </div>
+      <br />
+      <div style="font-size: larger">
+        {{ product.offerprice | currency: "INR" }} |
+        <span style="text-decoration: line-through">{{
+          product.realprice | currency: "INR"
+        }}</span>
+        <p>
+          <!-- <span>{{ totalscore }}</span> -->
+        </p>
+      </div>
+    </div>
+    <div class="col">
+      <br />
+      <div style="font-size: 30px; font-weight: bolder">Specifications</div>
+      <hr />
+      <div style="font-size: 20px">
+        <span style="font-weight: bold">Brand : </span>{{ product.brand }}
+      </div>
+      <br />
+      <div style="font-size: 20px">
+        <span style="font-weight: bold">Quantity : </span>{{ product.quantity }}
+      </div>
+      <br />
+      <div style="font-size: 20px">
+        <span style="font-weight: bold">Origin : </span>{{ product.origin }}
+      </div>
+      <br />
+      <div style="font-size: 20px">
+        <span style="font-weight: bold">Contact details : </span
+        >{{ product.contactno }}
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col">
+      <span style="font-weight: bold; font-size: 20px">Product Reviews </span>
+      <!--comments-->
+      <div *ngFor="let comment of comments">
+        <div *ngIf="product.id == comment.productid">
+          <small
+            ><span
+              ><mat-icon style="position: absolute">person_pin</mat-icon></span
+            >
+            <p style="margin-left: 30px">{{ comment.userid }}</p>
+          </small>
+          <p style="font-size: 15px">Comment : {{ comment.comment }}</p>
+          <p>
+            <span
+              style="
+                background-color: green;
+                font-size: small;
+                padding-right: 20px;
+                padding-left: 8px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                border-radius: 50px;
+              "
+            >
+              <span style="color: white">{{ calculateScore(comment) }}</span
+              >&nbsp;
+              <mat-icon
+                style="
+                  position: absolute;
+                  font-size: 10px;
+                  margin-top: 5px;
+                  color: white;
+                "
+                >star</mat-icon
+              >
+            </span>
+          </p>
+
+          <small> Posted on : {{ comment.date }}</small>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

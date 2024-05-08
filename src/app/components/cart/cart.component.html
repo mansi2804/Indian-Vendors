@@ -1,0 +1,67 @@
+<br />
+<div class="container">
+  <div *ngFor="let cart of cartProducts">
+    <div *ngIf="localuser == cart.userid">
+      <div
+        class="card shadow-lg mb-5"
+        style="width: 18rem; margin: 10px; float: left"
+      >
+        <div class="row">
+          <div class="col">
+            <img
+              src="{{ cart.productimage }}"
+              style="max-width: 285px; height: 180px; cursor: pointer"
+              class="card-img-top"
+              alt="Product unavailable please remove from cart"
+            />
+          </div>
+          <div class="col">
+            <div class="card-body">
+              <div class="card-text">
+                <strong>{{ cart.productname }} | {{ cart.brand }}</strong>
+              </div>
+              <div>
+                <small>Quantity: {{ cart.quantity }}</small>
+              </div>
+              <div>
+                {{ cart.offerprice | currency: "INR" }} |
+                <span style="text-decoration: line-through">{{
+                  cart.realprice | currency: "INR"
+                }}</span>
+              </div>
+            </div>
+            <button
+              class="btn btn-danger"
+              (click)="removeFromCart(cart)"
+              style="float: right"
+            >
+              remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+    <div>
+      <!-- <google-pay-button
+        class="btn fixed-bottom"
+        environment="TEST"
+        buttonType="buy"
+        buttonColor="black"
+        [paymentRequest]="paymentRequest"
+        (loadpaymentdata)="onLoadPaymentData($event)"
+        (error)="onError($event)"
+        [paymentAuthorizedCallback]="onPaymentDataAuthorized"
+      ></google-pay-button> -->
+      <button
+        type="button"
+        class="btn btn-primary fixed-bottom"
+        (click)="placeOrder(cartProducts)"
+      >
+        Checkout
+      </button>
+    </div>
+    <!---->
+  </div>
+</div>
+<!---->

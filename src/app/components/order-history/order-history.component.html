@@ -1,0 +1,38 @@
+<div class="container">
+  <div *ngFor="let orders of orderhistory">
+    <div *ngIf="orders.userid == user">
+      <div
+        class="card shadow-lg mb-5"
+        style="width: 18rem; margin: 10px; float: left"
+        (click)="navigateFullOrderHistory(orders)"
+      >
+        <div class="row">
+          <div class="col">
+            <img
+              src="{{ orders.productimage }}"
+              style="max-width: 285px; height: 180px; cursor: pointer"
+              class="card-img-top"
+              alt="Product unavailable please remove from orders"
+            />
+          </div>
+          <div class="col">
+            <div class="card-body">
+              <div class="card-text">
+                <strong>{{ orders.productname }} | {{ orders.brand }}</strong>
+              </div>
+              <div>
+                <small>Quantity: {{ orders.quantity }}</small>
+              </div>
+              <div>
+                {{ orders.offerprice | currency: "INR" }} |
+                <span style="text-decoration: line-through">{{
+                  orders.realprice | currency: "INR"
+                }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

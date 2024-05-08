@@ -1,0 +1,10 @@
+a {
+  color: white;
+  font-size: medium;
+}
+a:hover {
+  color: rgb(105, 105, 240);
+}
+ul {
+  padding: 5px;
+}

@@ -1,0 +1,28 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+ng-sidebar-container {
+  height: 100vh;
+}
+::ng-deep .ng-sidebar {
+  background-color: #f4f4f4;
+  width: 300px;
+  padding: 1em 1em;
+  box-shadow: 0 0 1em rgba(80, 00, 80, 0.5);
+}
+.cancel {
+  float: right;
+  background-color: #f4f4f4;
+  border: none;
+}
+
+.nav-link {
+  color: black;
+  margin-left: 10px;
+}
+hr {
+  margin-top: -5px;
+}
+.nav-item2 {
+  margin-top: -10px;
+}

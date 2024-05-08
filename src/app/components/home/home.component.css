@@ -1,0 +1,12 @@
+img:hover {
+  transform: scale(0.9);
+}
+body {
+  font-family: "Open Sans";
+}
+.card{
+    margin: 0 auto; /* Added */
+    float: left; /* Added */
+    margin-bottom: 10px; /* Added */
+    margin-left:2%;
+}

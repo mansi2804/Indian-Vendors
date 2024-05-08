@@ -1,0 +1,44 @@
+<ul *ngFor="let prod of this.products">
+  <div
+    class="card shadow-lg mb-5"
+    style="width: 18rem; margin: 10px; float: left"
+  >
+    <img
+      src="{{ prod.productimage }}"
+      style="max-width: 285px; height: 180px; cursor: pointer"
+      class="card-img-top"
+      alt="..."
+      (click)="onSelect(prod)"
+    />
+    <div class="card-body">
+      <div class="card-text">
+        <strong>{{ prod.productname }} | {{ prod.brand }}</strong>
+      </div>
+      <div>
+        <small>Quantity: {{ prod.quantity }}</small>
+      </div>
+      <div>
+        {{ prod.offerprice | currency: "INR" }} |
+        <span style="text-decoration: line-through">{{
+          prod.realprice | currency: "INR"
+        }}</span>
+      </div>
+
+      <button
+        type="submit"
+        style="float: right; padding-right: 30px; height: 40px"
+        class="btn btn-primary"
+        (click)="cart(prod)"
+      >
+        <p *ngIf="propsid != prod.id">
+          Add to cart &nbsp;
+          <mat-icon style="position: absolute">add_shopping_cart</mat-icon>
+        </p>
+        <p *ngIf="added == true && propsid == prod.id">
+          Added to cart &nbsp;
+          <mat-icon style="position: absolute">check_circle_outline</mat-icon>
+        </p>
+      </button>
+    </div>
+  </div>
+</ul>

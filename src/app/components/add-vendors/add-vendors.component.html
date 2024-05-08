@@ -1,0 +1,76 @@
+<app-admin-dashboard></app-admin-dashboard>
+<section id="cover">
+  <div id="cover-caption">
+    <div class="container">
+      <div class="row text-white">
+        <div
+          class="
+            col-xl-5 col-lg-6 col-md-8 col-sm-10
+            mx-auto
+            text-center
+            form
+            p-4
+          "
+        >
+          <h1 class="display-4 py-2 text-truncate">Add Vendors.</h1>
+          <div class="px-2">
+            <form
+              #form="ngForm"
+              (ngSubmit)="addVendors(form)"
+              class="justify-content-center"
+            >
+              <div class="form-group">
+                <label class="sr-only">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="userid"
+                  #userid="ngModel"
+                  [(ngModel)]="dataService.register.userid"
+                  placeholder="address@gmail.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="sr-only">password</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="password"
+                  #password="ngModel"
+                  [(ngModel)]="dataService.register.password"
+                  placeholder="Enter the password"
+                  required
+                />
+                <input
+                  type="text"
+                  class="form-control"
+                  name="contactno"
+                  #contactno="ngModel"
+                  [(ngModel)]="dataService.register.contactno"
+                  placeholder="Enter your number"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="checkbox"
+                  name="isvendor"
+                  #isvendor="ngModel"
+                  value="true"
+                  [(ngModel)]="dataService.register.isvendor"
+                  checked
+                />
+                <p id="showpass">isVendor</p>
+              </div>
+              <br />
+              <button type="submit" class="btn btn-primary btn-lg">
+                Add-vendor
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

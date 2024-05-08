@@ -1,0 +1,42 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <h3>Login here...</h3>
+    </div>
+
+    <!-- Login Form -->
+    <form #form="ngForm" (ngSubmit)="loginHandler(form)">
+      <input
+        type="text"
+        class="fadeIn second"
+        name="userid"
+        #userid="ngModel"
+        [(ngModel)]="dataService.login.userid"
+        placeholder="email id"
+      />
+      <input
+        type="{{ isActive ? 'text' : 'password' }}"
+        class="fadeIn third"
+        id="pass"
+        name="password"
+        #password="ngModel"
+        [(ngModel)]="dataService.login.password"
+        placeholder="password"
+        required
+      /><br />
+      <small>{{ dataService.err }}</small
+      ><br />
+      <input type="checkbox" (click)="active()" />
+      <p id="showpass">Show Password</p>
+      <input type="submit" class="fadeIn fourth" value="Login" />
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+  </div>
+</div>

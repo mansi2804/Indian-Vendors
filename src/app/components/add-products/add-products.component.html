@@ -1,0 +1,110 @@
+<app-vendorsdashboard></app-vendorsdashboard>
+<div class="container register-form">
+  <br />
+  <div class="form">
+    <div class="note">
+      <p>Add Products.</p>
+    </div>
+    <form #form="ngForm" (ngSubmit)="uploadProduct(form)">
+      <div class="form-content">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control readonly"
+            [value]="getLocalVendor + '_' + contactno"
+            style="color: black"
+            readonly
+          />
+        </div>
+        <div class="input-group">
+          <img
+            [src]="imageSrc"
+            id="img"
+            alt="select an image"
+            style="width: 80px; height: 80px"
+          /><br />
+          <div class="form-group">
+            <input
+              type="file"
+              accept=".png, .jpg, .jpeg"
+              class="form-control-file"
+              id="exampleFormControlFile1"
+              style="float: right"
+              name="productimage"
+              #productimage="ngModel"
+              [(ngModel)]="productService.products.productimage"
+              (change)="onFileSelected($event)"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="productname"
+            #productname="ngModel"
+            [(ngModel)]="productService.products.productname"
+            placeholder="Product name"
+            value=""
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="brand"
+            #brand="ngModel"
+            [(ngModel)]="productService.products.brand"
+            placeholder="Brand name"
+            value=""
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="quantity"
+            #quantity="ngModel"
+            [(ngModel)]="productService.products.quantity"
+            placeholder="Quantity in kg eg:5kg"
+            value=""
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="origin"
+            #origin="ngModel"
+            [(ngModel)]="productService.products.origin"
+            placeholder="Shop name and Address"
+            value=""
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="realprice"
+            #realprice="ngModel"
+            [(ngModel)]="productService.products.realprice"
+            placeholder="real price"
+            value=""
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="offerprice"
+            #offerprice="ngModel"
+            [(ngModel)]="productService.products.offerprice"
+            placeholder="Offer price"
+            value=""
+          />
+        </div>
+        <button type="submit" class="btnSubmit">Upload Product</button>
+      </div>
+    </form>
+  </div>
+</div>
