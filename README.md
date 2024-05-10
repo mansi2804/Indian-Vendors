@@ -1,6 +1,15 @@
+Outputs:
+![Alt Text]([https://github.com/mansi2804/Indian-Vendors/blob/main/main.png?raw=true])
+
+
+
+
+
+
+
 # Indianvendors
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
 ## Development server
 
