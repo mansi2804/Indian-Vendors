@@ -1,5 +1,5 @@
 Outputs:
-![Alt Text]([image_url](https://github.com/mansi2804/Indian-Vendors/blob/main/main.png?raw=true)
+![Alt Text]([https://github.com/mansi2804/Indian-Vendors/blob/main/main.png?raw=true])
 
 
 
