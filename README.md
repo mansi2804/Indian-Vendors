@@ -8,10 +8,14 @@ Frontend: HTML5 CSS3 bootstrap4
 
 
 Outputs:
+
+
 ![Alt Text](https://github.com/mansi2804/Indian-Vendors/blob/main/main.png?raw=true)
 
 ![Alt Text](https://github.com/mansi2804/Indian-Vendors/blob/main/ss3.png?raw=true)
+
 ![Alt Text](https://github.com/mansi2804/Indian-Vendors/blob/main/ss2.png?raw=true)
+
 ![Alt Text](https://github.com/mansi2804/Indian-Vendors/blob/main/ss.png?raw=true)
 
 
