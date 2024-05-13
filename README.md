@@ -1,12 +1,18 @@
+In the pandemic the vendors were not able to sell their products so we had make a centralized website in which the admin can add the vendors through dashboard Vendors can upload or delete the products from its dashboard And the user can access the products and can purchase it like addtocart and checkout once the product is purchased the user can make a comment on it , and if the user gives slang words then the system can detect it and the comment will not get updated this is built by sentiment analysis. 
+
+Tech stack
+Framework : angular 12 (business logic on type script)
+Database : firebase which is a real time database
+Frontend: HTML5 CSS3 bootstrap4
+
+
+
 Outputs:
 ![Alt Text](https://github.com/mansi2804/Indian-Vendors/blob/main/main.png?raw=true)
 
 ![Alt Text](https://github.com/mansi2804/Indian-Vendors/blob/main/ss3.png?raw=true)
 ![Alt Text](https://github.com/mansi2804/Indian-Vendors/blob/main/ss2.png?raw=true)
 ![Alt Text](https://github.com/mansi2804/Indian-Vendors/blob/main/ss.png?raw=true)
-
-
-
 
 
 
